@@ -1,0 +1,9 @@
+# Local-only files
+.env
+.env.*
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
