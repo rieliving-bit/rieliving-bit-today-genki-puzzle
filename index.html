@@ -95,6 +95,11 @@
       gap: 18px;
     }
 
+    #screen-game {
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
     .hidden {
       display: none !important;
     }
@@ -166,20 +171,21 @@
     }
 
     .question {
-      padding: 14px;
+      padding: 12px 14px;
       background: #f7fbfb;
       border: 1px solid #d5eeee;
       border-radius: 14px;
       text-align: center;
+      margin-bottom: 2px;
     }
 
     .question h2 {
-      font-size: 20px;
-      line-height: 1.55;
+      font-size: 19px;
+      line-height: 1.45;
     }
 
     .picture {
-      min-height: 184px;
+      min-height: 150px;
       display: grid;
       place-items: center;
       padding: 12px;
@@ -190,7 +196,7 @@
 
     .picture svg {
       width: 100%;
-      max-height: 170px;
+      max-height: 136px;
     }
 
     .hint {
@@ -353,7 +359,21 @@
       }
 
       .question h2 {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 1.42;
+      }
+
+      .picture {
+        min-height: 126px;
+        padding: 8px;
+      }
+
+      .picture svg {
+        max-height: 112px;
+      }
+
+      #screen-game {
+        gap: 9px;
       }
 
       .choice-text {
@@ -580,25 +600,36 @@
         comment: "上の段は、傘と靴の組み合わせです。下の段も同じにするので、緑の靴が入ります。"
       },
       {
-        question: "左の積み木を右へ倒すと、どの形に近くなるでしょう？",
+        question: "花、星、花、星と並んでいます。次に入るものはどれでしょう？",
         svg: `
-          <svg viewBox="0 0 320 150" aria-label="L字の積み木を右へ倒す問題">
-            <text x="80" y="24" fill="var(--ink)" font-size="16" font-weight="900" text-anchor="middle">いまの形</text>
-            <g transform="translate(44, 36)">
-              ${cube(0, 0, "#8b5cf6")}
-              ${cube(34, 0, "#8b5cf6")}
-              ${cube(0, 34, "#8b5cf6")}
+          <svg viewBox="0 0 320 130" aria-label="花、星、花、星、はてな">
+            <g transform="translate(32, 64)">
+              <circle cx="0" cy="-18" r="12" fill="#ef476f"/>
+              <circle cx="17" cy="-6" r="12" fill="#ef476f"/>
+              <circle cx="10" cy="14" r="12" fill="#ef476f"/>
+              <circle cx="-10" cy="14" r="12" fill="#ef476f"/>
+              <circle cx="-17" cy="-6" r="12" fill="#ef476f"/>
+              <circle cx="0" cy="0" r="9" fill="#ffd166"/>
             </g>
-            <path d="M145 61 A34 34 0 0 1 205 61" fill="none" stroke="#e86f00" stroke-width="5" stroke-linecap="round"/>
-            <polygon points="207,53 220,64 203,70" fill="#e86f00"/>
-            <text x="182" y="111" fill="#e86f00" font-size="15" font-weight="900" text-anchor="middle">右へ倒す</text>
-            <rect x="244" y="40" width="56" height="62" rx="8" fill="#fff7db" stroke="var(--warm)" stroke-width="3" stroke-dasharray="5"/>
-            <text x="272" y="79" fill="var(--warm)" font-size="30" font-weight="900" text-anchor="middle">?</text>
+            <text x="74" y="74" fill="#b8aea1" font-size="26" font-weight="900">→</text>
+            <polygon points="122,31 132,55 158,55 137,70 145,96 122,80 99,96 107,70 86,55 112,55" fill="#f3a712"/>
+            <text x="172" y="74" fill="#b8aea1" font-size="26" font-weight="900">→</text>
+            <g transform="translate(218, 64)">
+              <circle cx="0" cy="-18" r="12" fill="#ef476f"/>
+              <circle cx="17" cy="-6" r="12" fill="#ef476f"/>
+              <circle cx="10" cy="14" r="12" fill="#ef476f"/>
+              <circle cx="-10" cy="14" r="12" fill="#ef476f"/>
+              <circle cx="-17" cy="-6" r="12" fill="#ef476f"/>
+              <circle cx="0" cy="0" r="9" fill="#ffd166"/>
+            </g>
+            <text x="258" y="74" fill="#b8aea1" font-size="26" font-weight="900">→</text>
+            <rect x="280" y="38" width="36" height="52" rx="8" fill="#fff7db" stroke="var(--warm)" stroke-width="3" stroke-dasharray="5"/>
+            <text x="298" y="75" fill="var(--warm)" font-size="28" font-weight="900" text-anchor="middle">?</text>
           </svg>
         `,
-        choices: ["横に寝そべったLの形", "まっすぐ縦に立った形", "上下が逆になった形"],
-        correct: 1,
-        comment: "最後の問題は、動きを想像する練習です。右へ倒すので、横向きに寝そべったLの形に近くなります。"
+        choices: ["花", "星", "丸"],
+        correct: 2,
+        comment: "花、星、花、星の順番でくり返しています。次は星です。"
       }
     ];
 
